@@ -10,6 +10,16 @@
   <%= @student.grade %>
 </p>
 
+<p>
+  <b>Teacher:</b>
+  <% for teacher in Teacher.find(:all) %>
+    <div>
+      <%= @student.teachers.include?(teacher) %>
+      <%= teacher.name %>
+    </div>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

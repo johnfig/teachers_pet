@@ -56,6 +56,7 @@ class StudentsController < ApplicationController
   # PUT /students/1
   # PUT /students/1.json
   def update
+    params[:student][:teacher_ids] ||= []
     @student = Student.find(params[:id])
 
     respond_to do |format|
