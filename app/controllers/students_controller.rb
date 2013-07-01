@@ -1,6 +1,11 @@
 class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
+  def home
+    @students = Student.all
+    @teachers = Teacher.all
+  end
+
   def index
     @students = Student.all
 

@@ -2,6 +2,8 @@ TeachersPet::Application.routes.draw do
   resources :students
   resources :teachers
 
+  root to: 'students#home' 
+
   match '/students',       to: 'students#index'
   match '/teachers',       to: 'teachers#index'
 

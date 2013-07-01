@@ -11,11 +11,12 @@
 </p>
 
 <p>
-  <b>Teacher:</b>
+  <b>Teachers:</b>
   <% for teacher in Teacher.find(:all) %>
     <div>
-      <%= @student.teachers.include?(teacher) %>
+      <% if @student.teachers.include?(teacher) %>
       <%= teacher.name %>
+      <% end %>
     </div>
   <% end %>
 </p>
